@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://eliP:eli123@mern.yqytr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://eliP:eli123@mern.yqytr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }
