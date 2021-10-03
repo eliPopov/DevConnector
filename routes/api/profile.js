@@ -6,9 +6,6 @@ const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 const request = require('request');
 const config = require('config');
-const {
-  collapseTextChangeRangesAcrossMultipleVersions,
-} = require('typescript');
 
 //@route   GET api/profile/me
 //@desc    Get current users profile
@@ -36,8 +33,8 @@ router.post(
   '/',
   [
     auth,
-    check('status', 'Status is required').not().isEmpty(),
-    check('skills', 'Skills is required').not().isEmpty(),
+    check('status', 'Status is required').notEmpty(),
+    check('skills', 'Skills is required').notEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -164,9 +161,9 @@ router.put(
   [
     auth,
     [
-      check('title', 'Title is required').not().isEmpty(),
-      check('company', 'Company is required').not().isEmpty(),
-      check('from', 'From date is required').not().isEmpty(),
+      check('title', 'Title is required').notEmpty(),
+      check('company', 'Company is required').notEmpty(),
+      check('from', 'From date is required').notEmpty(),
     ],
   ],
   async (req, res) => {
@@ -221,10 +218,10 @@ router.put(
   [
     auth,
     [
-      check('school', 'School is required').not().isEmpty(),
-      check('degree', 'Degree is required').not().isEmpty(),
-      check('fieldofstudy', 'Field of study date is required').not().isEmpty(),
-      check('from', 'From date is required').not().isEmpty(),
+      check('school', 'School is required').notEmpty(),
+      check('degree', 'Degree is required').notEmpty(),
+      check('fieldofstudy', 'Field of study date is required').notEmpty(),
+      check('from', 'From date is required').notEmpty(),
     ],
   ],
   async (req, res) => {
