@@ -17,7 +17,7 @@ router.get('/me', auth, async (req, res) => {
       'user',
       ['name', 'avatar']
     );
-    if (!Profile) {
+    if (!profile) {
       return res.status(400).json({ msg: 'There is no profile for this user' });
     }
     res.json(profile);
@@ -113,7 +113,6 @@ router.get('/', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
-
 //@route   GET api/profile/user/:user_id
 //@desc    Get profile by user ID
 //@access  Public

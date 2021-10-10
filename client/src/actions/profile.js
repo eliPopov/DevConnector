@@ -52,7 +52,7 @@ export const getProfileById = (userId) => async (dispatch) => {
     const res = await axios.get(`/api/profile/user/${userId}`);
 
     dispatch({
-      type: GET_PROFILES,
+      type: GET_PROFILE,
       payload: res.data,
     });
   } catch (err) {
@@ -148,6 +148,7 @@ export const addEducation = (formData, history) => async (dispatch) => {
     const res = await axios.put('/api/profile/education', formData, config);
     dispatch({ type: UPDATE_PROFILE, payload: res.data });
     dispatch(setAlert('Education added', 'success'));
+    history.push('/dashboard');
   } catch (err) {
     const errors = err.response.data.errors;
 
