@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://eliP:eli123@mern.yqytr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "9dfa135f556a3bd6ab43",
+  "githubSecret": "*****"
+}
